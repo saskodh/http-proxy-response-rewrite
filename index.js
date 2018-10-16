@@ -10,7 +10,7 @@ var BufferHelper = require('bufferhelper');
  */
 module.exports = function modifyResponse(res, proxyRes, callback) {
 
-    let contentEncoding = proxyRes;
+    var contentEncoding = proxyRes;
 
     if (proxyRes && proxyRes.headers) {
       contentEncoding = proxyRes.headers['content-encoding'];
