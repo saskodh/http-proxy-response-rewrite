@@ -12,6 +12,10 @@ module.exports = function modifyResponse(res, contentEncoding, callback) {
     var unzip, zip;
     // Now only deal with the gzip/deflate/undefined content-encoding.
     switch (contentEncoding) {
+        case 'br':
+            unzip = zlib.BrotliDecompress();
+            zip = zlib.BrotliCompress();
+            break;
         case 'gzip':
             unzip = zlib.Gunzip();
             zip = zlib.Gzip();
